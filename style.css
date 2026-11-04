@@ -1,0 +1,414 @@
+/* ===== SHADOW GARDEN - style.css ===== */
+
+/* 1. Colors and fonts (change here, whole site changes) */
+:root {
+    --ink: #0e1213;
+    --soil: #161c1e;
+    --fog: #202829;
+    --moon: #e7ebec;
+    --ash: #9aa6a8;
+    --crimson: #b3263f;
+    --crimson-light: #d4546b;
+
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Karla", "Segoe UI", Arial, sans-serif;
+}
+
+/* 2. Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--moon);
+    background: var(--ink);
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--crimson-light); outline-offset: 3px; }
+
+/* 3. Common layout */
+.container { width: min(1100px, 90%); margin-inline: auto; }
+.container.narrow { width: min(720px, 90%); }
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; margin: 0; }
+h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem; }
+h3 { font-size: 1.5rem; margin-bottom: .5rem; }
+p { margin: 0 0 1rem; color: var(--ash); }
+
+/* 4. Header and navigation */
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    padding: 1.1rem 5%;
+    background: var(--ink);
+    border-bottom: 1px solid var(--fog);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-decoration: none;
+}
+.main-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.5rem; }
+.main-nav a {
+    text-decoration: none;
+    color: var(--ash);
+    padding: .3rem 0;
+    border-bottom: 2px solid transparent;
+}
+.main-nav a:hover,
+.main-nav a[aria-current="page"] { color: var(--moon); border-bottom-color: var(--crimson); }
+.main-nav .nav-cta {
+    background: var(--crimson);
+    color: var(--moon);
+    font-weight: 600;
+    padding: .5rem 1.1rem;
+    border-radius: 4px;
+    border-bottom: none;
+}
+.main-nav .nav-cta:hover { background: var(--crimson-light); }
+
+/* 5. Hero */
+.hero {
+    padding: clamp(5rem, 15vw, 11rem) 5%;
+    background:
+        radial-gradient(circle at 82% 22%, rgba(231, 235, 236, .10) 0, rgba(231, 235, 236, 0) 18%),
+        linear-gradient(to top, var(--soil) 0, var(--ink) 60%);
+}
+.hero-inner {
+    width: min(1100px, 100%);
+    margin-inline: auto;
+    padding-left: clamp(1rem, 3vw, 2rem);
+    border-left: 3px solid var(--crimson);
+}
+.hero h1 { font-size: clamp(3rem, 9vw, 6.5rem); max-width: 11ch; margin-bottom: 1.5rem; }
+.hero-text { max-width: 50ch; font-size: 1.2rem; margin-bottom: 2rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.btn {
+    display: inline-block;
+    padding: .85rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--crimson);
+    transition: background .2s, border-color .2s;
+}
+.btn-primary { background: var(--crimson); color: var(--moon); }
+.btn-primary:hover { background: var(--crimson-light); border-color: var(--crimson-light); }
+.btn-ghost { color: var(--moon); }
+.btn-ghost:hover { background: var(--crimson); }
+
+/* 6. Who we are */
+.about { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+
+/* 7. Services */
+.services { background: var(--soil); padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem 2.5rem;
+    margin-top: 2.5rem;
+}
+.service { border-top: 1px solid var(--fog); padding-top: 1.25rem; }
+.service:hover { border-top-color: var(--crimson); }
+.service p { margin: 0; }
+
+/* 8. Our code */
+.code { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.code-list { list-style: none; margin: 0; padding: 0; }
+.code-list li {
+    padding: 1.1rem 0 1.1rem 1.25rem;
+    border-left: 2px solid var(--fog);
+    color: var(--ash);
+    margin-bottom: .5rem;
+}
+.code-list li:hover { border-left-color: var(--crimson); }
+.code-list strong { color: var(--moon); }
+
+/* 9. Footer */
+.site-footer {
+    background: var(--soil);
+    border-top: 1px solid var(--fog);
+    text-align: center;
+    padding: 3.5rem 5% 2rem;
+}
+.footer-tagline { font-family: var(--font-display); font-size: 1.6rem; color: var(--moon); margin-bottom: 1.5rem; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.8rem; margin-bottom: 2rem; }
+.footer-links a { color: var(--ash); text-decoration: none; }
+.footer-links a:hover { color: var(--moon); text-decoration: underline; text-decoration-color: var(--crimson); }
+.copyright, .fiction-note { font-size: .9rem; margin: 0 0 .3rem; }
+.fiction-note { color: var(--crimson-light); }
+
+/* 10. Mobile */
+@media (max-width: 700px) {
+    .site-header { position: static; justify-content: center; text-align: center; }
+    .main-nav { justify-content: center; }
+}
+
+/* 11. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+}
+
+/* 8b. Inner pages (About Us etc.) */
+.page-hero {
+    padding: clamp(4rem, 10vw, 7rem) 5%;
+    background: linear-gradient(to top, var(--soil) 0, var(--ink) 70%);
+}
+.page-hero .hero-inner { width: min(1100px, 100%); margin-inline: auto; padding-left: clamp(1rem, 3vw, 2rem); border-left: 3px solid var(--crimson); }
+.page-hero h1 { font-size: clamp(2.6rem, 7vw, 4.5rem); margin-bottom: 1rem; }
+
+.founder { background: var(--soil); padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.founder-note {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--moon);
+    border-left: 3px solid var(--crimson);
+    padding-left: 1rem;
+    margin: 2rem 0;
+}
+
+/* 8c. Services page */
+.services-list { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.service-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem 3rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--fog);
+}
+.service-detail:first-child { border-top: none; padding-top: 0; }
+.service-detail h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin-bottom: .5rem; }
+.service-detail p { max-width: 55ch; margin: 0; }
+.service-detail ul { list-style: none; margin: 0; padding: 0; }
+.service-detail li {
+    padding: .5rem 0 .5rem 1rem;
+    border-left: 2px solid var(--fog);
+    color: var(--ash);
+}
+.service-detail:hover li { border-left-color: var(--crimson); }
+
+@media (min-width: 800px) {
+    .service-detail { grid-template-columns: 1.2fr 1fr; align-items: start; }
+    .service-detail h2 { grid-column: 1; }
+    .service-detail p { grid-column: 1; }
+    .service-detail ul { grid-column: 2; grid-row: 1 / span 2; }
+}
+
+/* 8d. How We Help page (numbered steps) */
+.steps-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 2.5rem 4rem;
+    border-left: 1px solid var(--fog);
+    margin-left: 1.25rem;
+}
+.steps li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: -1.25rem;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    border: 2px solid var(--crimson);
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--moon);
+}
+.steps h2 { font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: .5rem; }
+.steps p { margin: 0; }
+
+/* 8e. Our Code page */
+.principles { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.principle {
+    padding: 1.75rem 0 1.75rem 1.5rem;
+    border-left: 3px solid var(--fog);
+    margin-bottom: 1.5rem;
+}
+.principle:hover { border-left-color: var(--crimson); }
+.principle h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: .5rem; }
+.principle p { margin: 0; }
+
+/* 8f. Contact page */
+.contact-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+.contact-info h2, .contact-form h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+.contact-block { border-left: 2px solid var(--fog); padding-left: 1.1rem; margin-bottom: 1.75rem; }
+.contact-block:hover { border-left-color: var(--crimson); }
+.contact-block p { margin: 0; }
+.contact-block a { color: var(--crimson-light); }
+
+.contact-form {
+    background: var(--soil);
+    border: 1px solid var(--fog);
+    border-radius: 4px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+.contact-form label { display: block; margin: 1.25rem 0 .4rem; font-weight: 600; }
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    font: inherit;
+    color: var(--moon);
+    background: var(--ink);
+    border: 1px solid var(--fog);
+    border-radius: 4px;
+    padding: .75rem .9rem;
+}
+.contact-form textarea { resize: vertical; }
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--ash); opacity: .7; }
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus { border-color: var(--crimson); outline: none; }
+.contact-form .btn { margin-top: 1.75rem; cursor: pointer; font-family: inherit; font-size: 1rem; }
+
+@media (min-width: 850px) {
+    .contact-grid { grid-template-columns: 1fr 1.1fr; align-items: start; }
+}
+
+/* 8g. Submit a Case page */
+.emergency-note {
+    border-left: 3px solid var(--crimson);
+    background: var(--soil);
+    color: var(--moon);
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.case-form fieldset { border: none; margin: 0 0 2.5rem; padding: 0; }
+.case-form legend {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--moon);
+    padding: 0 0 .5rem;
+    width: 100%;
+    border-bottom: 1px solid var(--fog);
+}
+.case-form .field-label { font-weight: 600; color: var(--moon); margin: 1.25rem 0 .4rem; }
+
+.choice-row { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+.case-form .choice {
+    display: flex;
+    align-items: flex-start;
+    gap: .6rem;
+    margin: .4rem 0;
+    font-weight: 400;
+    color: var(--ash);
+    cursor: pointer;
+}
+.case-form .choice input { width: auto; margin-top: .35rem; accent-color: var(--crimson); }
+.case-form .choice.check { margin: .9rem 0; }
+
+.form-note { font-size: .95rem; margin: 1.25rem 0 0; }
+
+/* 8h. FAQ page */
+.faq-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.faq-list details { border-top: 1px solid var(--fog); }
+.faq-list details:last-child { border-bottom: 1px solid var(--fog); }
+
+.faq-list summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.4rem 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 3.5vw, 1.7rem);
+    font-weight: 600;
+    color: var(--moon);
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+    content: "+";
+    flex-shrink: 0;
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    color: var(--crimson-light);
+}
+.faq-list details[open] summary::after { content: "\2212"; }
+.faq-list summary:hover { color: var(--crimson-light); }
+
+.faq-list details p { max-width: 60ch; margin: 0 0 1.5rem; }
+
+/* 8i. Shadow page (hero with artwork) */
+.shadow-hero {
+    padding: clamp(3rem, 8vw, 6rem) 5%;
+    background: linear-gradient(to top, var(--soil) 0, var(--ink) 70%);
+}
+.shadow-hero-grid {
+    width: min(1100px, 100%);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+.shadow-hero-text { border-left: 3px solid var(--crimson); padding-left: clamp(1rem, 3vw, 2rem); }
+.shadow-hero-text h1 { font-size: clamp(3.5rem, 11vw, 7rem); margin-bottom: 1rem; }
+
+.shadow-art { max-width: 420px; width: 100%; margin-inline: auto; }
+.shadow-art svg { display: block; width: 100%; height: auto; }
+
+/* colors of the drawing */
+.art-glow   { fill: var(--moon); opacity: .07; }
+.art-moon   { fill: var(--moon); opacity: .9; }
+.art-stem   { fill: none; stroke: #0a0e0f; stroke-width: 5; stroke-linecap: round; }
+.art-leaf   { fill: #0a0e0f; }
+.art-cloak  { fill: #080b0c; }
+.art-face   { fill: #000; stroke: var(--crimson); stroke-width: 1.5; }
+.art-ground { fill: #080b0c; }
+
+@media (min-width: 850px) {
+    .shadow-hero-grid { grid-template-columns: 1.2fr 1fr; }
+}
+
+/* 8j. Case Studies page */
+.cases-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+
+.case-disclaimer {
+    border-left: 3px solid var(--crimson);
+    background: var(--soil);
+    color: var(--moon);
+    padding: 1rem 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.case {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--fog);
+}
+.case:last-child { border-bottom: 1px solid var(--fog); }
+.case h2 { font-size: clamp(1.8rem, 4.5vw, 2.5rem); margin-bottom: .3rem; }
+.case-type { color: var(--crimson-light); font-weight: 600; margin-bottom: 1.5rem; }
+.case p strong { color: var(--moon); }
+
+/* 8k. Legal pages (Privacy Policy, Terms) */
+.legal-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.legal-block { padding: 1.75rem 0; border-top: 1px solid var(--fog); }
+.legal-block h2 { font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: .6rem; }
+.legal-block p { margin: 0; }
+.legal-block a { color: var(--crimson-light); }
+.legal-date { margin-top: 2rem; font-size: .95rem; }

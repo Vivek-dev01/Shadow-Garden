@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit a case to SHADOW GARDEN. Fictional project.">
+    <title>Submit a Case | SHADOW GARDEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a class="logo" href="index.html" aria-label="SHADOW GARDEN home">SHADOW GARDEN</a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="how-we-help.html">How We Help</a>
+            <a href="our-code.html">Our Code</a>
+            <a href="contact.html">Contact Us</a>
+            <a class="nav-cta" href="submit-case.html" aria-current="page">Submit a Case</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="hero-inner">
+                <h1>Submit a Case</h1>
+                <p class="hero-text">
+                    Tell us what is happening. Share only what you are comfortable
+                    sharing. Shadow reads every case personally.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container narrow">
+
+                <p class="emergency-note">
+                    If you are in immediate danger, contact your local emergency
+                    services first. Do not wait for a reply from us.
+                </p>
+
+                <form class="contact-form case-form" action="#" method="post">
+
+                    <fieldset>
+                        <legend>About you</legend>
+
+                        <label for="alias">Name or alias</label>
+                        <input type="text" id="alias" name="alias" placeholder="You can use any name" required>
+
+                        <label for="email">A safe email for our reply</label>
+                        <input type="email" id="email" name="email" placeholder="An email only you can read" required>
+
+                        <label for="contact-method">Safest way to reach you</label>
+                        <select id="contact-method" name="contact_method" required>
+                            <option value="" disabled selected>Choose one</option>
+                            <option value="email">Email only</option>
+                            <option value="phone">Phone call</option>
+                            <option value="message">Text or app message</option>
+                            <option value="other">Other, I will explain later</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Your situation</legend>
+
+                        <label for="case-type">What are you facing?</label>
+                        <select id="case-type" name="case_type" required>
+                            <option value="" disabled selected>Choose one</option>
+                            <option value="threat">Threats on my life</option>
+                            <option value="harassment">Harassment or intimidation</option>
+                            <option value="cyber">Cyber attack or leaked data</option>
+                            <option value="blackmail">Blackmail or extortion</option>
+                            <option value="abuse">Abuse, I need to escape</option>
+                            <option value="other">Something else</option>
+                        </select>
+
+                        <p class="field-label">How urgent is it?</p>
+                        <div class="choice-row">
+                            <label class="choice"><input type="radio" name="urgency" value="now" required> Happening now</label>
+                            <label class="choice"><input type="radio" name="urgency" value="soon"> Within days</label>
+                            <label class="choice"><input type="radio" name="urgency" value="ongoing"> Ongoing</label>
+                        </div>
+
+                        <label for="since">How long has this been going on?</label>
+                        <input type="text" id="since" name="since" placeholder="For example, about 3 months">
+
+                        <label for="description">What is happening?</label>
+                        <textarea id="description" name="description" rows="7" placeholder="Write in your own words. Start anywhere." required></textarea>
+
+                        <label for="who">Do you know who is behind it?</label>
+                        <textarea id="who" name="who" rows="3" placeholder="A name, a description, or &quot;I do not know&quot;"></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Before you send</legend>
+
+                        <label class="choice check">
+                            <input type="checkbox" name="agree_review" required>
+                            I understand that Shadow reviews my case first and may decline it.
+                        </label>
+
+                        <label class="choice check">
+                            <input type="checkbox" name="agree_paid" required>
+                            I understand that accepted cases are a paid service, with terms agreed privately.
+                        </label>
+
+                        <label class="choice check">
+                            <input type="checkbox" name="agree_truth" required>
+                            What I have written is true to the best of my knowledge.
+                        </label>
+                    </fieldset>
+
+                    <button class="btn btn-primary" type="submit">Submit case</button>
+
+                    <p class="form-note">
+                        Please do not attach files yet. If we take your case, we will
+                        tell you how to share evidence safely.
+                    </p>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-tagline">When No One Sees, We See.</p>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a href="aboutus.html">About Us</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <p class="copyright">&copy; 2026 SHADOW GARDEN. All Rights Reserved.</p>
+        <p class="fiction-note">Shadow Garden is a fictional project. It is not a real organization.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact SHADOW GARDEN. Fictional project.">
+    <title>Contact Us | SHADOW GARDEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a class="logo" href="index.html" aria-label="SHADOW GARDEN home">SHADOW GARDEN</a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="how-we-help.html">How We Help</a>
+            <a href="our-code.html">Our Code</a>
+            <a href="contact.html" aria-current="page">Contact Us</a>
+            <a class="nav-cta" href="submit-case.html">Submit a Case</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="hero-inner">
+                <h1>Contact Us</h1>
+                <p class="hero-text">
+                    Questions before you trust us with a case? Ask here.
+                    Shadow reads every message personally.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container contact-grid">
+
+                <div class="contact-info">
+                    <h2>Before you write</h2>
+
+                    <div class="contact-block">
+                        <h3>Need us to take a case?</h3>
+                        <p>Use the <a href="submit-case.html">case form</a> instead. It asks the right questions so we can act faster.</p>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3>General questions</h3>
+                        <p>Ask about how we work, what we handle or what happens next. Please do not send sensitive details here.</p>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3>In immediate danger?</h3>
+                        <p>Contact your local emergency services first. Do not wait for a reply from us.</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="#" method="post">
+                    <h2>Send a message</h2>
+
+                    <label for="name">Name or alias</label>
+                    <input type="text" id="name" name="name" placeholder="You can use any name" required>
+
+                    <label for="email">Email for our reply</label>
+                    <input type="email" id="email" name="email" placeholder="A safe email only you can read" required>
+
+                    <label for="topic">What is this about?</label>
+                    <select id="topic" name="topic" required>
+                        <option value="" disabled selected>Choose one</option>
+                        <option value="question">A question about your work</option>
+                        <option value="pricing">How pricing works</option>
+                        <option value="privacy">Privacy and safety of my information</option>
+                        <option value="other">Something else</option>
+                    </select>
+
+                    <label for="message">Your message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Keep it general. Case details go in the case form." required></textarea>
+
+                    <button class="btn btn-primary" type="submit">Send message</button>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-tagline">When No One Sees, We See.</p>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a href="aboutus.html">About Us</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <p class="copyright">&copy; 2026 SHADOW GARDEN. All Rights Reserved.</p>
+        <p class="fiction-note">Shadow Garden is a fictional project. It is not a real organization.</p>
+    </footer>
+
+</body>
+</html>
